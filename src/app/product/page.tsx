@@ -1,11 +1,12 @@
 import React from 'react';
 
 function index() {
-    return (
-        <div>
-            <p>This is product page</p>
-        </div>
-    );
+  return (
+    <div>
+      <p>This is product page</p>
+    </div>
+  );
 }
 
-export default index;<p>This is product page</p>
+export default index;
+<p>This is product page</p>;
