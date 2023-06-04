@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import './style.scss';
 import { usePathname } from 'next/navigation';
+import './style.scss';
 
 function Header() {
   const pathName = usePathname(); 
