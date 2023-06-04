@@ -1,9 +1,12 @@
 import ProductItem from '@/components/product-item/product-item';
 import { ProductModel } from '@/models/product/product.model';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { RootState } from '../reduxStore/store';
+// import { get } from '../reduxStore/features/product/productSlice';
 
 const getData = async () => {
   const res = await fetch('http://localhost:5000/items');
-  debugger
+  debugger;
   if (!res.ok) {
     throw new Error('Failed to fetch data');
   }
@@ -12,11 +15,13 @@ const getData = async () => {
 
 async function index() {
   const products: ProductModel[] = await getData();
-  // TODO: Save products into Redux
+  // const dispatch = useDispatch();
+  // const productState = useSelector((state: RootState) => state.productState);
+  // dispatch(get(products));
 
   const renderProductList =
-    products.length > 0 &&
-    products.map((product) => (
+  products.length > 0 &&
+  products.map((product) => (
       <ProductItem
         key={product.id}
         alt={product.alt}

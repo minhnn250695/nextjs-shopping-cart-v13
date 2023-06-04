@@ -3,6 +3,7 @@ import Header from '@/components/header/heder';
 import { Inter } from 'next/font/google';
 import Footer from '@/components/footer/footer';
 import './globals.scss';
+import Providers from './reduxStore/provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -35,7 +36,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={inter.className}>
         <Header></Header>
-        <div className='main-content'>{children}</div>
+        <div className="main-content">
+          <Providers>{children}</Providers>
+        </div>
         <Footer></Footer>
       </body>
     </html>

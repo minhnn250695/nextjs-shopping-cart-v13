@@ -1,6 +1,24 @@
+'use client';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../reduxStore/store';
+import { get } from '../reduxStore/features/product/productSlice';
+import { useEffect } from 'react';
+import { fetchProduct } from './api/route';
+
 function Contact() {
+  const dispatch = useDispatch();
+  const productState = useSelector((state: RootState) => state.productState);
+
+  const products = fetchProduct();
+  useEffect(() => {
+    console.log(products);
+    
+    dispatch(get(products));
+  }, [products]);
+
   return (
     <div>
+      <span>{productState.length}</span>
       <section className="bg-img1 txt-center p-lr-15 p-tb-92" style={{ backgroundImage: "url('images/bg-01.jpg')" }}>
         <h2 className="ltext-105 cl0 txt-center">Contact</h2>
       </section>
