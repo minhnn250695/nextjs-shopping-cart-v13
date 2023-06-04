@@ -1,11 +1,12 @@
 {
-  "name": "shopping-cart-nextjs-v13-v13v13",
+  "name": "shopping-cart-nextjs-v13",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "db" : "json-server --watch db.json --port 5000",
     "lint": "next lint"
   },
   "dependencies": {
