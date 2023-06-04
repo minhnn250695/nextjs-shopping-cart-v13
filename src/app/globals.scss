@@ -24,4 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     ) */
     /* rgb(var(--background-start-rgb)); */
+    .main-content {
+      min-height: calc(100vh - 84px);
+    }
 }

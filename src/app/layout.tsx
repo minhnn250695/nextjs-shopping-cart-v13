@@ -1,9 +1,8 @@
 'use client';
 import Header from '@/components/header/heder';
 import { Inter } from 'next/font/google';
-import { usePathname } from 'next/navigation';
-import './globals.css';
 import Footer from '@/components/footer/footer';
+import './globals.scss';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -12,7 +11,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathName = usePathname();
   return (
     <html lang="en">
       <head>
@@ -42,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={inter.className}>
         <Header></Header>
-        {children}
+        <div className='main-content'>{children}</div>
         <Footer></Footer>
       </body>
     </html>
