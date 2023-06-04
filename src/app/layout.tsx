@@ -1,9 +1,9 @@
 'use client';
-import { usePathname } from 'next/navigation';
-import Link from 'next/link';
-import './globals.css';
+import Header from '@/components/header/heder';
 import { Inter } from 'next/font/google';
-
+import { usePathname } from 'next/navigation';
+import './globals.css';
+import Footer from '@/components/footer/footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -24,11 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" type="image/png" href="/images/icons/favicon.png" />
         <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="/fonts/iconic/css/material-design-iconic-font.min.css"
-        />
+        <link rel="stylesheet" type="text/css" href="/fonts/iconic/css/material-design-iconic-font.min.css" />
         <link rel="stylesheet" type="text/css" href="/fonts/linearicons-v1.0.0/icon-font.min.css" />
         <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css" />
         <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css" />
@@ -45,53 +41,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <title>React App</title>
       </head>
       <body className={inter.className}>
-        <div className="container">
-          <div className="header" style={{ marginBottom: 10 }}>
-            This is header bar.
-          </div>
-
-          <ul style={{ alignContent: 'center' }}>
-            <li>
-              <Link
-                href="product"
-                style={{
-                  padding: 3,
-                  margin: 1,
-                  backgroundColor: '#dedede',
-                  color: pathName.endsWith('product') ? 'green' : 'black',
-                }}
-              >
-                Product List
-              </Link>
-              <Link
-                href="product/detail"
-                style={{
-                  padding: 3,
-                  margin: 1,
-                  backgroundColor: '#dedede',
-                  color: pathName.endsWith('product/detail') ? 'green' : 'black',
-                }}
-              >
-                Product Detail
-              </Link>
-              <Link
-                href="about"
-                style={{
-                  padding: 3,
-                  margin: 1,
-                  backgroundColor: '#dedede',
-                  color: pathName.endsWith('about') ? 'green' : 'black',
-                }}
-              >
-                About
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <Header></Header>
         {children}
-        <div className="footer" style={{ marginTop: 10 }}>
-          This is footer area.
-        </div>
+        <Footer></Footer>
       </body>
     </html>
   );
