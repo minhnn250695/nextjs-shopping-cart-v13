@@ -1,30 +1,31 @@
 'use client';
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../reduxStore/store';
-import { get } from '../reduxStore/features/product/productSlice';
-import { useEffect } from 'react';
-import { fetchProduct } from './api/route';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { RootState } from '../reduxStore/store';
+// import { get } from '../reduxStore/features/product/productSlice';
+// import { useEffect } from 'react';
 
 function Contact() {
-  const dispatch = useDispatch();
-  const productState = useSelector((state: RootState) => state.productState);
+  // const dispatch = useDispatch();
+  // const productState = useSelector((state: RootState) => state.productState);
 
-  const products = fetchProduct();
-  useEffect(() => {
-    console.log(products);
-    
-    dispatch(get(products));
-  }, [products]);
+  // useEffect(() => {
+  //   async function fetchProduct() {
+  //     const productsResponse = await fetch('http://localhost:5000/items?page=1&&_limit=20');
+  //     const products = await productsResponse.json();
+  //     dispatch(get(products));
+  //   }
+  //   fetchProduct();
+  // }, []);
 
   return (
     <div>
-      <span>{productState.length}</span>
       <section className="bg-img1 txt-center p-lr-15 p-tb-92" style={{ backgroundImage: "url('images/bg-01.jpg')" }}>
         <h2 className="ltext-105 cl0 txt-center">Contact</h2>
       </section>
 
       <section className="bg0 p-t-104 p-b-116">
         <div className="container">
+          {/* <span>Product Items: {productState.productList.length}</span> */}
           <div className="flex-w flex-tr">
             <div className="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
               <form>
