@@ -1,45 +1,55 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import './style.scss';
+import { LoginButton, LogoutButton, ProfileButton, RegisterButton } from '../reuse-button/reuse.button.components';
 
 function Header() {
-  const pathName = usePathname(); 
+  const pathName = usePathname();
   return (
     <div style={{ marginBottom: '85px' }}>
       <header>
         <div className="container-menu-desktop">
           <div className="wrap-menu-desktop">
             <nav className="limiter-menu-desktop container">
-              <a  className="logo">
+              <a className="logo">
                 <img src="/images/icons/logo-01.png" alt="IMG-LOGO" />
               </a>
 
               <div className="menu-desktop">
                 <ul className="main-menu">
                   <li>
-                    <Link  className={`nav-link ${pathName.endsWith('/') ? 'active' : ''}`} href="/">
+                    <Link className={`nav-link ${pathName.endsWith('/') ? 'active' : ''}`} href="/">
                       Home
                     </Link>
                   </li>
                   <li>
-                    <Link  className={`nav-link ${pathName.endsWith('/product') ? 'active' : ''}`} href="/product">
+                    <Link className={`nav-link ${pathName.endsWith('/product') ? 'active' : ''}`} href="/product">
                       Products
                     </Link>
                   </li>
                   <li>
-                    <Link  className={`nav-link ${pathName.endsWith('/cart') ? 'active' : ''}`} href="/cart">
+                    <Link className={`nav-link ${pathName.endsWith('/cart') ? 'active' : ''}`} href="/cart">
                       Cart
                     </Link>
                   </li>
                   <li>
-                    <Link  className={`nav-link ${pathName.endsWith('/about') ? 'active' : ''}`} href="/about">
+                    <Link className={`nav-link ${pathName.endsWith('/about') ? 'active' : ''}`} href="/about">
                       About
                     </Link>
                   </li>
                   <li>
-                    <Link  className={`nav-link ${pathName.endsWith('/contact') ? 'active' : ''}`} href="/contact">
+                    <Link className={`nav-link ${pathName.endsWith('/contact') ? 'active' : ''}`} href="/contact">
                       Contact
                     </Link>
+                  </li>
+                  <li>
+                    <LoginButton></LoginButton>
+                  </li>
+                  <li>
+                    <LogoutButton></LogoutButton>
+                  </li>
+                  <li>
+                    <RegisterButton></RegisterButton>
                   </li>
                 </ul>
               </div>
