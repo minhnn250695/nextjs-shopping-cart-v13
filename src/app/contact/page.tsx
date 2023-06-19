@@ -1,21 +1,21 @@
 'use client';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { RootState } from '../reduxStore/store';
-// import { get } from '../reduxStore/features/product/productSlice';
-// import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../reduxStore/store';
+import { get } from '../reduxStore/features/product/productSlice';
+import { useEffect } from 'react';
 
 function Contact() {
-  // const dispatch = useDispatch();
-  // const productState = useSelector((state: RootState) => state.productState);
+  const dispatch = useDispatch();
+  const productState = useSelector((state: RootState) => state.productState);
 
-  // useEffect(() => {
-  //   async function fetchProduct() {
-  //     const productsResponse = await fetch('http://localhost:5000/items?page=1&&_limit=20');
-  //     const products = await productsResponse.json();
-  //     dispatch(get(products));
-  //   }
-  //   fetchProduct();
-  // }, []);
+  useEffect(() => {
+    async function fetchProduct() {
+      const productsResponse = await fetch('http://localhost:5000/items?page=1&&_limit=20');
+      const products = await productsResponse.json();
+      dispatch(get(products));
+    }
+    fetchProduct();
+  }, []);
 
   return (
     <div>
@@ -25,7 +25,7 @@ function Contact() {
 
       <section className="bg0 p-t-104 p-b-116">
         <div className="container">
-          {/* <span>Product Items: {productState.productList.length}</span> */}
+          <span>Product Items: {productState.productList.length}</span>
           <div className="flex-w flex-tr">
             <div className="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
               <form>
